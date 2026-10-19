@@ -1,0 +1,16 @@
+-- После импорта reports/power_bi/orders.csv назовите таблицу orders.
+-- Каждую меру создайте отдельно через «Новая мера».
+
+Заказы = DISTINCTCOUNT(orders[order_id])
+
+Завершённые заказы = CALCULATE(COUNTROWS(orders), orders[status] <> "cancelled")
+
+Возвраты = CALCULATE(COUNTROWS(orders), orders[status] = "returned")
+
+Выручка после возвратов = CALCULATE(SUM(orders[amount]), orders[status] = "delivered")
+
+Доля возвратов = DIVIDE([Возвраты], [Завершённые заказы])
+
+Доставки позже срока = SUM(orders[is_late])
+
+Доля доставок позже срока = DIVIDE([Доставки позже срока], [Завершённые заказы])

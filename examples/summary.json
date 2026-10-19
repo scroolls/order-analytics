@@ -1,0 +1,13 @@
+{
+  "orders": 4000,
+  "completed_orders": 3779,
+  "cancelled_orders": 221,
+  "returned_orders": 308,
+  "net_revenue": 19139529.73,
+  "return_rate": 0.0815,
+  "return_rate_ci_low": 0.0732,
+  "return_rate_ci_high": 0.0907,
+  "late_rate": 0.4311,
+  "median_delivery_days": 5.0,
+  "p90_delivery_days": 7.0
+}
